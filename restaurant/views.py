@@ -1,3 +1,6 @@
+from .serializers import BookingSerializer
+from .models import Booking
+from rest_framework import viewsets
 from .serializers import MenuSerializer, BookingSerializer
 from .models import Menu, Booking
 from rest_framework import generics
@@ -36,3 +39,8 @@ class SingleMenuItemView(
 ):
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
+
+
+class BookingViewSet(viewsets.ModelViewSet):
+    queryset = Booking.objects.all()
+    serializer_class = BookingSerializer
