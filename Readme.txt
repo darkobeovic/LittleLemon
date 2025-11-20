@@ -5,7 +5,7 @@ This project implements:
 - Table Booking API
 - Token-based authentication (DRF TokenAuth + Djoser)
 - Full CRUD functionality for menu items and bookings
-- MySQL backend integration (commented for compatibility; SQLite enabled by default)
+- MySQL backend integration
 - Unit tests for models and views
 - Django-rendered HTML pages and static assets
 - Full Git/GitHub version control
