@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
     # Página principal
@@ -9,6 +10,7 @@ urlpatterns = [
     path('menu/items/', views.MenuItemsView.as_view(), name='menu-items'),
     path('menu/items/<int:pk>/', views.SingleMenuItemView.as_view(),
          name='single-menu-item'),
+    path('api-token-auth/', obtain_auth_token)
 
     # --- Rutas dinámicas antiguas (comentadas porque causan conflicto)
     # path('menu/<str:menu_item>/', views.display_menu_item, name='display-menu'),

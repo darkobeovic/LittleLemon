@@ -1,11 +1,9 @@
-from .serializers import BookingSerializer
-from .models import Booking
-from rest_framework import viewsets
+from rest_framework import viewsets, generics
 from .serializers import MenuSerializer, BookingSerializer
 from .models import Menu, Booking
-from rest_framework import generics
 from django.http import HttpResponse
 from django.shortcuts import render
+from rest_framework.permissions import IsAuthenticated
 
 # --- Vistas HTML para rutas estáticas ---
 
@@ -44,3 +42,4 @@ class SingleMenuItemView(
 class BookingViewSet(viewsets.ModelViewSet):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
+    permission_classes = [IsAuthenticated]
